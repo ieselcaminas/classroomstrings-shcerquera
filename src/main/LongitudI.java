@@ -1,3 +1,5 @@
+package main;
+
 public class LongitudI {
     //Realiza un programa que lea una cadena de texto y nos diga cuántas palabras tienen una longitud de k caracteres.
 
@@ -8,14 +10,14 @@ public class LongitudI {
         int k = 5;
 
         //crear metodo para copntar las palabras.
-        int contador = contarPalabrasDeLongitudK(cadena, k);
+        int contador = comprueba(cadena, k);
         // mostrar resultado
         System.out.println("Numero de palabras con longitud " + k + ": " + contador);
 
     }
 
     // metodo
-    public static int contarPalabrasDeLongitudK(String cadena, int k) {
+    public static int comprueba(String cadena, int k) {
         //dividir el texto en palabras usadas
         String[] palabras = cadena.split("\\s+");
         int contador = 0;

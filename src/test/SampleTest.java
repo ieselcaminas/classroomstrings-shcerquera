@@ -1,10 +1,13 @@
-import org.junit.jupiter.api.DisplayName;
+package test;
+
+import main.Sample;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class SampleTest {
 
-    @org.junit.jupiter.api.Test
+    @Test
     void suma() {
        assertEquals(5, Sample.suma(2, 3));
     }
