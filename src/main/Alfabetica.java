@@ -4,7 +4,7 @@ public class Alfabetica {
     // que nos diga si una palabra es alfabética o no.
     public static void main(String[] args) {
 
-        String palabra = "amarillo";
+        String palabra = "Amarillo";
 
         if (esAlfabetica(palabra)){
             System.out.println(palabra + ", es una palabra alfabetica");
