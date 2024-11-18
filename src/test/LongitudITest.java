@@ -1,9 +1,13 @@
-import main.LongitudI;
+package test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import main.LongitudI;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 public class LongitudITest {
-    @org.junit.jupiter.api.Test
+    @Test
     void test(){
         assertEquals(3, LongitudI.comprueba("1 22 333 22 444 22", 2));
     }

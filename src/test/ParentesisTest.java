@@ -1,3 +1,5 @@
+package test;
+
 import main.Parentesis;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -18,10 +20,17 @@ class ParentesisTest {
     void noEsParentizada() {
         assertFalse(Parentesis.esParentizada("una )cadena (mal (parentizada)"));
     }
+
     @Test
     @DisplayName("Le sobra un ( al final")
     void noEsParentizadaFinal() {
         assertFalse(Parentesis.esParentizada("una )cadena (mal (parentizada)("));
+    }
+
+    @Test
+    @DisplayName("Le sobra un ( al final")
+    void noEsParentizadaInvertidos() {
+        assertFalse(Parentesis.esParentizada("esto )no está( bien"));
     }
 
 }
