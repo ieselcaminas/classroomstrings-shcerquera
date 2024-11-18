@@ -7,12 +7,12 @@ public class Pasatiempos {
 
 public static void main(String[] args) {
         String textoOriginal = "frase de cambio";
-        String textoSinVocales = reemplazarVocales ( textoOriginal);
+        String textoSinVocales = pasaTiempos ( textoOriginal);
 
         System.out.print("Texto original: " + textoOriginal);
         System.out.print("Texto descifrado: " + textoSinVocales);
     }
-public static String reemplazarVocales(String textoOriguinal){
+public static String pasaTiempos(String textoOriguinal){
 
         StringBuilder cambioAPuntos = new StringBuilder();
 

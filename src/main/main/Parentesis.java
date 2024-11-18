@@ -12,11 +12,8 @@ package main;
 public class Parentesis {
     public static void main(String[] args) {
 
-        String texto = "este es un (Ejemplo) y otro (texto)";
-        String palabra = "  ";
-
-
-
+        String texto ="esto (es un (Ejemplo))";
+        String palabra = "Ejemplo";
 
         //verificamos si la palabra esta dentro de un paréntesis
         if (esParentizada(palabra)) {
@@ -24,39 +21,53 @@ public class Parentesis {
         }else {
             System.out.println("La palabra' " + texto + " ' No està dentro de parèntesis.");
         }
-
-
-
     }
     public static boolean esParentizada(String palabra){
-        //definimos las variantes
-        int inicioParentesis = -1;
-        int finParentesis = -1;
-
-        //recorremos el texto para encontrar los paréntesis
-        String texto = "";
-        for (int i = 0; i < texto.length(); i++) {
-            if (texto.charAt(i) == '(') {
-                inicioParentesis = i;
-            } else if (texto.charAt(i) == ')') {
-                finParentesis = i;
-
-
-                //si encontramos paréntesis de apertura y cierre verificamos si la palabra esta dentro
-                if (inicioParentesis != -1 && finParentesis != -1 && inicioParentesis < finParentesis) {
-                    String contenidoEnParentesis = texto.substring(inicioParentesis + 1, finParentesis);
-                    if (contenidoEnParentesis.contains(palabra)) {
-                        return true;
-                    }
-                    // reiniciamos las posiciones para buscar nuevos parentesis
-                    inicioParentesis = -1;
-
-                }
-
+        int contador = 0;
+        boolean parentesis = true;
+        for (int i = 0; i <palabra.length() ; i++) {
+            if (palabra.charAt(i) == '('){
+                contador ++;
+            } else if (palabra.charAt(i) == ')') {
+                contador --;
+            }
+            if (contador < 0){
+                parentesis = false;
+                break;
             }
         }
-        return false;
+            if (contador > 0 ){
+                parentesis =  false;
 
+            }
+            return parentesis;
 
+        }
     }
-}//
+
+//        int inicioParentesis = 1;
+//        int finParentesis = -1;
+//
+//        //recorremos el texto para encontrar los paréntesis
+//        String texto = " ";
+//        for (int i = 0; i < texto.length(); i++) {
+//            if (texto.charAt(i) == '(') {
+//                inicioParentesis = i;
+//            } else if (texto.charAt(i) == ')') {
+//                finParentesis = i;
+//            }
+//            //si encontramos paréntesis de apertura y cierre verificamos si la palabra esta dentro
+//        if (inicioParentesis != 1 && finParentesis != -1 && inicioParentesis < finParentesis) {
+//            String contenidoEnParentesis = texto.substring(inicioParentesis + 1, finParentesis);
+//            if (contenidoEnParentesis.contains(palabra)) {
+//            return true;
+//                    }
+//            // reiniciamos las posiciones para buscar nuevos parentesis
+//            inicioParentesis = 1;
+//            finParentesis = -1;
+//            }
+//        }
+//
+//        return false;
+//    }
+//}
